@@ -1,0 +1,22 @@
+{
+  "name": "jstdd",
+  "version": "1.0.0",
+  "description": "tdd",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kelvinmodesto/jstdd.git"
+  },
+  "keywords": [
+    "tdd"
+  ],
+  "author": "Kelvin Modesto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kelvinmodesto/jstdd/issues"
+  },
+  "homepage": "https://github.com/kelvinmodesto/jstdd#readme"
+}
