@@ -11,16 +11,18 @@ module.exports = {
   output: {
     filename: './build.js',
   },
+  resolve: {
+    extensions: ['.js', '.jsx', '.json'],
+  },
   module: {
     rules: [{
-      test: /\.js?$/,
+      test: /\.js[x]?$/,
       exclude: /node_modules/,
       use: {
         loader: 'babel-loader',
         options: {
-          presets: [
-            ['env', 'es2015'],
-          ],
+          presets: ['env', 'es2015', 'react'],
+          plugins: ['transform-object-rest-spread'],
         },
       },
     }, {
