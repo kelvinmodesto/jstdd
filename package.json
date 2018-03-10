@@ -8,7 +8,9 @@
     "lint": "eslint src/*.js",
     "prepush": "npm run lint",
     "build": "webpack --colors --progress",
-    "watch": "npm run build --watch"
+    "watch": "npm run build --watch",
+    "dev": "NODE_ENV='development' npm run build",
+    "server": "webpack-dev-server --inline --open"
   },
   "repository": {
     "type": "git",
@@ -35,10 +37,14 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
     "husky": "^0.14.3",
+    "uglifyjs-webpack-plugin": "^1.2.2",
     "webpack": "^4.1.1",
-    "webpack-cli": "^2.0.10"
+    "webpack-cli": "^2.0.10",
+    "webpack-dev-server": "^3.1.1"
   },
   "dependencies": {
-    "ramda": "^0.25.0"
+    "ramda": "^0.25.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
   }
 }
