@@ -23,6 +23,23 @@ module.exports = {
           ],
         },
       },
+    }, {
+      test: /\.css$/,
+      use: ['style-loader', 'css-loader'],
+    }, {
+      test: /\.scss$/,
+      use: ['style-loader', 'css-loader', 'sass-loader'],
+    }, {
+      test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
+      use: ['file-loader'],
+    }, {
+      test: /\.(png|jpe?g|gif|svg)(\?\S*)?$/,
+      use: {
+        loader: 'file-loader',
+        query: {
+          name: '[name].[ext]?[hash]',
+        },
+      },
     }],
   },
   plugins: [
