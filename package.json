@@ -4,13 +4,22 @@
   "description": "tdd",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha tests/**/*.spec.js",
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
+    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --watch",
+    "test:coverage": "nyc npm test",
     "lint": "eslint src/*.js",
-    "prepush": "npm run lint",
+    "prepush": "npm run test:coverage",
     "build": "webpack --colors --progress",
     "watch": "npm run build --watch",
     "dev": "NODE_ENV='development' npm run build",
     "server": "webpack-dev-server --inline --open"
+  },
+  "nyc":{
+    "reporter":["text","html"],
+    "exclude":["tests/**"],
+    "check-coverage":true,
+    "functions":80,
+    "lines":80
   },
   "repository": {
     "type": "git",
@@ -33,6 +42,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-es2015-native-modules": "^6.9.4",
     "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
     "chai": "^4.1.2",
     "css-loader": "^0.28.10",
     "eslint": "^4.18.2",
@@ -46,6 +56,7 @@
     "husky": "^0.14.3",
     "mocha": "^5.0.4",
     "node-sass": "^4.7.2",
+    "nyc": "^11.6.0",
     "path": "^0.12.7",
     "sass-loader": "^6.0.7",
     "style-loader": "^0.20.3",

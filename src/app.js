@@ -1,8 +1,12 @@
-import * as R from 'ramda';
+const FizzBuzz = (num) => {
+	if(num===0) return 0;
+	if(num%3===0 && num%5===0) return 'FizzBuzz';
 
-const arr1 = [1, 1, 1, 2, 2, 3, 4, 5, 6, 6];
-const arr2 = [5, 6, 6, 6, 7, 7, 8, 9, 10, 1];
+	if(num%3===0) return 'Fizz';
 
-const arr3 = R.union(arr1, arr2);
+	if(num%5===0) return 'Buzz';
 
-console.log(arr3);
+	return num;
+};
+
+export default FizzBuzz;
